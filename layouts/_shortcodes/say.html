@@ -1,0 +1,3 @@
+{{/* 대화 말풍선: {{< say good >}}"..."{{< /say >}} — good(이렇게) / bad(이렇게 말고) */}}
+{{- $kind := .Get 0 | default "good" -}}
+<div class="say {{ $kind }}"><span class="tag">{{ if eq $kind "bad" }}이렇게 말고{{ else }}이렇게{{ end }}</span><p>{{ .Inner | .Page.RenderString }}</p></div>

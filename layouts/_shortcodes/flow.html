@@ -1,0 +1,2 @@
+{{/* 순서 흐름: {{< flow "단계1" "단계2" "단계3" >}} */}}
+<div class="flow">{{ range $i, $s := .Params }}{{ if $i }}<i aria-hidden="true">→</i>{{ end }}<span>{{ $s }}</span>{{ end }}</div>

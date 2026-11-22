@@ -1,0 +1,81 @@
+/* 글 시각화 블록 — 아들 셋 색(파랑·주황·초록) + 신호등 색 */
+:root {
+  --son1: #2F6FDB; --son2: #E0702A; --son3: #2A9466;
+  --go: #2A9466; --wait: #E3A21A; --stop: #D23B3B;
+  --good-bg: #E8F5EE; --bad-bg: #FCECEC; --note-bg: #FFF6DD;
+  --card-bg: var(--entry);
+}
+:root[data-theme="dark"] {
+  --son1: #6C9BF0; --son2: #F0965A; --son3: #5CC497;
+  --go: #5CC497; --wait: #F2C04E; --stop: #F06B6B;
+  --good-bg: #1E3329; --bad-bg: #3A2226; --note-bg: #3A321C;
+}
+
+/* 광고 표시 */
+.post-content .ad-note { font-size: .85rem; color: var(--secondary); background: var(--note-bg); border-radius: 8px; padding: 8px 12px; margin-bottom: 24px; }
+
+/* 목표 한 줄 */
+.post-content .goal { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 20px 0; padding: 14px 18px; border-radius: 12px; background: var(--card-bg); border: 1px solid var(--border); }
+.post-content .goal s { color: var(--secondary); }
+.post-content .goal strong { font-size: 1.2rem; color: var(--son1); }
+
+/* 개입 신호등 */
+.post-content .lamps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 20px 0 12px; }
+.post-content .lamp { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 16px; min-width: 0; }
+.post-content .lamp .dot { display: block; width: 22px; height: 22px; border-radius: 50%; margin-bottom: 8px; }
+.post-content .lamp.go .dot { background: var(--go); }
+.post-content .lamp.wait .dot { background: var(--wait); }
+.post-content .lamp.stop .dot { background: var(--stop); }
+.post-content .lamp.stop { border-color: var(--stop); }
+.post-content .lamp b { display: block; font-size: 1.05rem; margin-bottom: 4px; }
+.post-content .lamp p { margin: 0; font-size: .92rem; color: var(--secondary); }
+
+/* 순서 흐름 */
+.post-content .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 24px; }
+.post-content .flow span { background: var(--card-bg); border: 1px solid var(--border); border-radius: 999px; padding: 4px 14px; font-size: .92rem; font-weight: 500; }
+.post-content .flow i { font-style: normal; color: var(--secondary); }
+
+/* 방법 번호 제목: ## 제목 {.step data-n="1" data-c="1"} */
+.post-content h2.step { display: flex; align-items: center; gap: 12px; }
+.post-content h2.step::before { content: attr(data-n); flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 1rem; background: var(--son1); }
+.post-content h2.step[data-c="2"]::before { background: var(--son2); }
+.post-content h2.step[data-c="3"]::before { background: var(--son3); }
+
+/* 대화 말풍선 */
+.post-content .say { border-radius: 14px; padding: 10px 14px; margin: 10px 0; max-width: 36em; }
+.post-content .say.good { background: var(--good-bg); }
+.post-content .say.bad { background: var(--bad-bg); }
+.post-content .say .tag { display: block; font-size: .75rem; font-weight: 700; letter-spacing: .04em; margin-bottom: 2px; }
+.post-content .say.good .tag { color: var(--go); }
+.post-content .say.bad .tag { color: var(--stop); }
+.post-content .say p { margin: 0; }
+
+/* 규칙 칩 */
+.post-content .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.post-content .chips span { border: 2px solid var(--son3); border-radius: 8px; padding: 3px 10px; font-weight: 500; font-size: .92rem; }
+
+/* 주의 상자 */
+.post-content .warn { background: var(--card-bg); border: 1px solid var(--border); border-left: 6px solid var(--stop); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
+.post-content .warn p { margin: 0; }
+
+/* 상품 카드 */
+.post-content .products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 20px 0; }
+.post-content .product { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.post-content .product .thumb { display: flex; justify-content: center; }
+.post-content .product .thumb img { width: 120px; height: auto; margin: 0; border-radius: 8px; }
+.post-content .product b { font-size: 1rem; }
+.post-content .product p { margin: 0; font-size: .9rem; color: var(--secondary); }
+.post-content .product a.buy { margin-top: auto; display: block; text-align: center; font-weight: 700; font-size: .9rem; color: #fff; background: var(--son2); border-radius: 10px; padding: 9px 10px; box-shadow: none; text-decoration: none; }
+.post-content .product a.buy:hover { filter: brightness(1.08); }
+
+/* 정리 */
+.post-content ul.summary { list-style: none; padding: 0; }
+.post-content ul.summary li { display: flex; gap: 12px; align-items: baseline; margin: 8px 0; }
+.post-content ul.summary li::before { content: ""; flex: none; width: 12px; height: 12px; border-radius: 3px; background: var(--son1); transform: translateY(1px); }
+.post-content ul.summary li:nth-child(2)::before { background: var(--son2); }
+.post-content ul.summary li:nth-child(3)::before { background: var(--son3); }
+.post-content .ask { border: 1px dashed var(--son2); border-radius: 14px; padding: 16px 18px; margin: 16px 0; font-weight: 500; }
+
+@media (max-width: 620px) {
+  .post-content .lamps, .post-content .products { grid-template-columns: minmax(0, 1fr); }
+}

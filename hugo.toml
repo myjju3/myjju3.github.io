@@ -42,5 +42,9 @@ enableRobotsTXT = true
 [markup.goldmark.renderer]
   unsafe = false
 
+[markup.goldmark.parser.attribute]
+  block = true
+  title = true
+
 [sitemap]
   changeFreq = 'weekly'

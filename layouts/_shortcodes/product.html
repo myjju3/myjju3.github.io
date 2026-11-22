@@ -1,0 +1,7 @@
+{{/* 상품 카드: {{< product name="..." url="..." img="..." button="..." >}}설명{{< /product >}} — products 안에 넣는다 */}}
+<div class="product">
+  {{- with .Get "img" }}<a class="thumb" href="{{ $.Get "url" }}" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url"><img src="{{ . }}" alt="{{ $.Get "name" }}" loading="lazy" width="120"></a>{{ end }}
+  <b>{{ .Get "name" }}</b>
+  <p>{{ .Inner | .Page.RenderString }}</p>
+  <a class="buy" href="{{ .Get "url" }}" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">{{ .Get "button" | default "쿠팡에서 보기" }}</a>
+</div>

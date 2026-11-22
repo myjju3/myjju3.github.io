@@ -1,0 +1,3 @@
+{{/* 상자: {{< box ad >}}, {{< box goal >}}, {{< box warn >}}, {{< box ask >}} — 안의 마크다운을 그대로 렌더링 */}}
+{{- $kind := .Get 0 -}}
+<div class="{{ if eq $kind "ad" }}ad-note{{ else }}{{ $kind }}{{ end }}">{{ .Inner | .Page.RenderString }}</div>
