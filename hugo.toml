@@ -19,6 +19,9 @@ enableRobotsTXT = true
   ShowToc = true
   TocOpen = false
 
+  [params.analytics.google]
+    SiteVerificationTag = 'c1WQsSxKoYZ7ukz4jQAKTSwakd8Z98lITAC4-VU67WQ'
+
   [params.homeInfoParams]
     Title = '아들 셋 아빠 육아노트'
     Content = '아들 셋을 키우며 해 본 것, 통한 것, 실패한 것을 솔직하게 적습니다.'
