@@ -1,0 +1,40 @@
+baseURL = 'https://myjju3.github.io/'
+locale = 'ko-kr'
+defaultContentLanguage = 'ko'
+title = '아들 셋 아빠 육아노트'
+theme = 'PaperMod'
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = '아들 셋을 키우는 아빠가 직접 해 본 육아 방법과 살림 팁을 정리합니다.'
+  author = '아들 셋 아빠'
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowToc = true
+  TocOpen = false
+
+  [params.homeInfoParams]
+    Title = '아들 셋 아빠 육아노트'
+    Content = '아들 셋을 키우며 해 본 것, 통한 것, 실패한 것을 솔직하게 적습니다.'
+
+[menus]
+  [[menus.main]]
+    name = '글 목록'
+    pageRef = '/posts'
+    weight = 10
+  [[menus.main]]
+    name = '태그'
+    pageRef = '/tags'
+    weight = 20
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[sitemap]
+  changeFreq = 'weekly'
