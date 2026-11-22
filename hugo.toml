@@ -22,6 +22,9 @@ enableRobotsTXT = true
   [params.analytics.google]
     SiteVerificationTag = 'c1WQsSxKoYZ7ukz4jQAKTSwakd8Z98lITAC4-VU67WQ'
 
+  [params.analytics.naver]
+    SiteVerificationTag = '5c829abe28508a87ae350b60cd5e595470ccdc4d'
+
   [params.homeInfoParams]
     Title = '아들 셋 아빠 육아노트'
     Content = '아들 셋을 키우며 해 본 것, 통한 것, 실패한 것을 솔직하게 적습니다.'
